@@ -3,6 +3,9 @@ const withNextra = require('nextra')({
   themeConfig: './theme.config.js',
   unstable_staticImage: true
 })
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true'
+})
 
 module.exports = {
   async redirects() {
@@ -113,5 +116,6 @@ module.exports = {
   images: {
     domains: ['geekpluxblog.oss-cn-hongkong.aliyuncs.com']
   },
-  ...withNextra()
+  ...withNextra(),
+  // ...withBundleAnalyzer({}),
 }
