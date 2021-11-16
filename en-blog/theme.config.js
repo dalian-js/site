@@ -7,6 +7,12 @@ const KEYWORDS = 'Web,JavaScript,Code,Computer Science,Geek,Data Visualization'
 const IMAGE =
   'https://geekpluxblog.oss-cn-hongkong.aliyuncs.com/avatar.jpg?x-oss-process=style/zip'
 const TWITTER = 'https://twitter.com/geekplux'
+const DOMAIN = 'geekplux.me'
+
+const api = 'https://i.microlink.io/'
+const cardUrl = (title) =>
+  `https://cards.microlink.io/?preset=chrisbiscardi&subtitle=${DOMAIN}&name=${SITE}&title=${title}`
+const coverImage = (title) => `${api}${encodeURIComponent(cardUrl(title))}`
 
 export default {
   readMore: '↗',
@@ -60,16 +66,13 @@ export default {
         <>
           <meta
             property="og:image"
-            content={`https://og-image.vercel.app/${meta.title} - ${SITE}.png`}
+            content={coverImage(title ? title : SITE)}
           />
           <meta
             name="twitter:image"
-            content={`https://og-image.vercel.app/${meta.title} - ${SITE}.png`}
+            content={coverImage(title ? title : SITE)}
           />
-          <meta
-            itemProp="image"
-            content={`https://og-image.vercel.app/${meta.title} - ${SITE}.png`}
-          />
+          <meta itemProp="image" content={coverImage(title ? title : SITE)} />
         </>
       )}
       {meta.date ? (
@@ -84,11 +87,7 @@ export default {
       "@type": "Article",
       "headline": "${title}",
       "image": [
-        "${
-          meta.cover
-            ? meta.cover
-            : `https://og-image.vercel.app/${meta.title} - ${SITE}.png`
-        }"
+        "${meta.cover ? meta.cover : coverImage(title ? title : SITE)}"
        ],
       "datePublished": "${meta.date}",
       "dateModified": "${meta.date}",
