@@ -8,33 +8,22 @@ class MyDocument extends Document {
 
   render() {
     const meta = {
-      title: 'GeekPlux',
-      description:
-        'Data Visualization & Full-stack programmer @ finance firm, always exploring',
-      image:
-        'https://geekpluxblog.oss-cn-hongkong.aliyuncs.com/avatar.jpg?x-oss-process=style/zip',
-      twitter: '@geekplux',
-      keywords: 'Web,JavaScript,Code,Computer Science,Geek,Data Visualization'
+      site: 'GeekPlux',
+      url: 'https://geekplux.me',
+      twitter: '@geekplux'
     }
 
     return (
       <Html lang="en">
         <Head>
           <meta name="robots" content="follow, index" />
-          <meta name="description" content={meta.description} />
-          <meta name="keywords" content={meta.keywords} />
           <meta name="msapplication-TileColor" content="#ffffff" />
           <meta name="theme-color" content="#ffffff" />
-          <meta property="og:site_name" content={meta.title} />
-          <meta property="og:description" content={meta.description} />
-          <meta property="og:title" content={meta.title} />
-          <meta property="og:image" content={meta.image} />
-          <meta itemProp="image" content={meta.image} />
+          <meta property="og:site_name" content={meta.site} />
+          <meta property="og:url" content={meta.url} />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content={meta.twitter} />
-          <meta name="twitter:title" content={meta.title} />
-          <meta name="twitter:description" content={meta.description} />
-          <meta name="twitter:image" content={meta.image} />
+          <meta name="twitter:creator" content={meta.twitter} />
           <link
             rel="alternate"
             type="application/rss+xml"

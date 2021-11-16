@@ -1,6 +1,12 @@
 const YEAR = new Date().getFullYear()
 const SITE = 'GeekPlux'
 const CUSDIS_APP_ID = '69828d4f-0692-405b-9087-82249312acd6'
+const DESCRIPTION = '数据可视化 & 全栈程序员 @ 金融公司，always exploring'
+const KEYWORDS =
+  '数据,随想,代码,金融,极客,可视化,Web,JavaScript,Code,Computer Science,Geek,Data Visualization'
+const IMAGE =
+  'https://geekpluxblog.oss-cn-hongkong.aliyuncs.com/avatar.jpg?x-oss-process=style/zip'
+const TWITTER = 'https://twitter.com/geekplux'
 
 export default {
   readMore: '↗',
@@ -10,22 +16,86 @@ export default {
   },
   head: ({ title, meta }) => (
     <>
-      {title && <meta property="og:title" content={`${meta.title} - ${SITE}`} />}
-      {title && <meta name="twitter:title" content={`${meta.title} - ${SITE}`} />}
-      {meta.description && (
-        <meta name="description" content={meta.description} />
+      {title ? (
+        <>
+          <meta property="og:title" content={`${meta.title} - ${SITE}`} />
+          <meta name="twitter:title" content={`${meta.title} - ${SITE}`} />
+        </>
+      ) : (
+        <>
+          <meta property="og:title" content={SITE} />
+          <meta name="twitter:title" content={SITE} />
+        </>
       )}
-      {meta.description && (
-        <meta property="og:description" content={meta.description} />
+      {meta.description ? (
+        <>
+          <meta name="description" content={meta.description} />
+          <meta property="og:description" content={meta.description} />
+          <meta name="twitter:description" content={meta.description} />
+        </>
+      ) : (
+        <>
+          <meta name="description" content={DESCRIPTION} />
+          <meta property="og:description" content={DESCRIPTION} />
+          <meta name="twitter:description" content={DESCRIPTION} />
+        </>
       )}
-      {meta.description && (
-        <meta name="twitter:description" content={meta.description} />
+      {meta.tag ? (
+        <meta name="keywords" content={meta.tag} />
+      ) : (
+        <meta name="keywords" content={KEYWORDS} />
       )}
-      {meta.tag && <meta name="keywords" content={meta.tag} />}
-      {meta.author && <meta name="author" content={meta.author} />}
-      {meta.cover && <meta property="og:image" content={meta.cover} />}
-      {meta.cover && <meta name="twitter:image" content={meta.cover} />}
-      {meta.cover && <meta itemProp="image" content={meta.cover} />}
+      {meta.author ? (
+        <meta name="author" content={meta.author} />
+      ) : (
+        <meta name="author" content={SITE} />
+      )}
+      {meta.cover ? (
+        <>
+          <meta property="og:image" content={meta.cover} />
+          <meta name="twitter:image" content={meta.cover} />
+          <meta itemProp="image" content={meta.cover} />
+        </>
+      ) : (
+        <>
+          <meta property="og:image" content={IMAGE} />
+          <meta name="twitter:image" content={IMAGE} />
+          <meta itemProp="image" content={IMAGE} />
+        </>
+      )}
+      {meta.date ? (
+        <>
+          <meta property="og:type" content="article" />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: `
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "${title}",
+      "image": [
+        "${
+          meta.cover
+            ? meta.cover
+            : `https://og-image.vercel.app/${meta.title} - ${SITE}.png`
+        }"
+       ],
+      "datePublished": "${meta.date}",
+      "dateModified": "${meta.date}",
+      "author": {
+          "@type": "Person",
+          "name": "${meta.author || SITE}",
+          "url": "${TWITTER}"
+        }
+    }
+        `
+            }}
+          ></script>
+        </>
+      ) : (
+        <meta property="og:type" content="website" />
+      )}
     </>
   ),
   footer: (
