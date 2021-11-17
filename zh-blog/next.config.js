@@ -110,11 +110,15 @@ module.exports = {
         source: '/r/remote2',
         destination: 'https://u.jd.com/2MyQqNj',
         permanent: false
+      },{
+        source: '/r/sihoo',
+        destination: 'https://u.jd.com/2MWaZv8',
+        permanent: false
       }
     ]
   },
   images: {
-    domains: ['geekpluxblog.oss-cn-hongkong.aliyuncs.com']
+    domains: ['geekpluxblog.oss-cn-hongkong.aliyuncs.com', 'cdn.buymeacoffee.com']
   },
   ...withNextra(),
   // ...withBundleAnalyzer({}),
