@@ -6,7 +6,7 @@ categories:
 - Ukulele
 - Learning
 tags:
-- 新技能
+- 技能
 - Skill
 - 乐器
 - Music
