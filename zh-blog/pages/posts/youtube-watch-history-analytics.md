@@ -116,8 +116,8 @@ for subtitle in history["subtitles"]:
 - 有很多频道的回看次数很多，比如 [ZUOLUOTV](https://www.youtube.com/channel/UCFCs9KNL6f2ZMKsoU7rjbkg)、[李自然说](https://www.youtube.com/channel/UCgLUl1WDoDXUtxPaZeSZHsw)、[四季萌芽](https://www.youtube.com/channel/UCUMzET2JdWLxZGhvTKCIK-A)
 
 | 排名 | 频道 | 观看视频数量 |
-| ---- | --- | --- | --- |
-|1|[TechLead](https://www.youtube.com/channel/UC4xKdmAXFh4ACyhpiQ_3qBw)|254|
+| ---- | --- | --- |
+| 1 | [TechLead](https://www.youtube.com/channel/UC4xKdmAXFh4ACyhpiQ_3qBw) | 254 |
 |2|[中国好声音官方频道SING!CHINA Official Channel](https://www.youtube.com/channel/UCTmSp0HNi-NVxFinOsp1O4g)|250|
 |3|[TVB WuXia Drama 經典武俠頻道](https://www.youtube.com/channel/UCcadjKOwi1MLRlXb78aGx-Q)|224|
 |4|[优优独播剧场——YoYo Television Series Exclusive](https://www.youtube.com/channel/UCteBLoijWzlVFSR5BBtS_2Q)|132|
@@ -150,7 +150,7 @@ for subtitle in history["subtitles"]:
 - [React Conf](https://www.youtube.com/channel/UCz5vTaEhvh7dOHEyd1efcaQ) 我应该是看了很多 Talk，但是不一定每个都看完了，很多讲的没意思就跳出了
 
 | 排名 | 频道 | 观看时长（小时） |
-| ---- | --- | --- | --- |
+| ---- | --- | --- |
 |1|[Abed C3](https://www.youtube.com/channel/UCgDgJN3XIMQnwh-92E_ZpuQ)|63.55|
 |2|[React Conf](https://www.youtube.com/channel/UCz5vTaEhvh7dOHEyd1efcaQ)|54.88|
 |3|[TechLead](https://www.youtube.com/channel/UC4xKdmAXFh4ACyhpiQ_3qBw)|48.77|
