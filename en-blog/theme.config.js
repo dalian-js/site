@@ -4,8 +4,6 @@ const CUSDIS_APP_ID = 'b0e48772-478b-4a76-8a92-5c7ccb0eb107'
 const DESCRIPTION =
   'Data Visualization & Full-stack programmer @ finance firm, always exploring'
 const KEYWORDS = 'Web,JavaScript,Code,Computer Science,Geek,Data Visualization'
-const IMAGE =
-  'https://geekpluxblog.oss-cn-hongkong.aliyuncs.com/avatar.jpg?x-oss-process=style/zip'
 const TWITTER = 'https://twitter.com/geekplux'
 const DOMAIN = 'geekplux.me'
 
