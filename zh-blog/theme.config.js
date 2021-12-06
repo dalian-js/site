@@ -20,64 +20,27 @@ export default {
   cusdis: {
     appId: CUSDIS_APP_ID
   },
-  head: ({ title, meta }) => (
-    <>
-      {title ? (
-        <>
-          <meta property="og:title" content={`${meta.title} - ${SITE}`} />
-          <meta name="twitter:title" content={`${meta.title} - ${SITE}`} />
-        </>
-      ) : (
-        <>
-          <meta property="og:title" content={SITE} />
-          <meta name="twitter:title" content={SITE} />
-        </>
-      )}
-      {meta.description ? (
-        <>
-          <meta name="description" content={meta.description} />
-          <meta property="og:description" content={meta.description} />
-          <meta name="twitter:description" content={meta.description} />
-        </>
-      ) : (
-        <>
-          <meta name="description" content={DESCRIPTION} />
-          <meta property="og:description" content={DESCRIPTION} />
-          <meta name="twitter:description" content={DESCRIPTION} />
-        </>
-      )}
-      {meta.tag ? (
-        <meta name="keywords" content={meta.tag} />
-      ) : (
-        <meta name="keywords" content={KEYWORDS} />
-      )}
-      {meta.author ? (
-        <meta name="author" content={meta.author} />
-      ) : (
-        <meta name="author" content={SITE} />
-      )}
-      {meta.cover ? (
-        <>
-          <meta property="og:image" content={meta.cover} />
-          <meta name="twitter:image" content={meta.cover} />
-          <meta itemProp="image" content={meta.cover} />
-        </>
-      ) : (
-        <>
-          <meta
-            property="og:image"
-            content={coverImage(title ? title : SITE)}
-          />
-          <meta
-            name="twitter:image"
-            content={coverImage(title ? title : SITE)}
-          />
-          <meta itemProp="image" content={coverImage(title ? title : SITE)} />
-        </>
-      )}
-      {meta.date ? (
-        <>
-          <meta property="og:type" content="article" />
+  head: ({ meta }) => {
+    const title = meta.title ? `${meta.title} - ${SITE}` : SITE
+    const description = meta.description || DESCRIPTION
+    const keywords = meta.tag || KEYWORDS
+    const author = meta.author || SITE
+    const cover = meta.cover ? meta.cover : coverImage(meta.title || SITE)
+    const type = meta.date ? 'article' : 'website'
+    return (
+      <>
+        <meta property="og:title" content={title} />
+        <meta name="twitter:title" content={title} />
+        <meta name="description" content={description} />
+        <meta property="og:description" content={description} />
+        <meta name="twitter:description" content={description} />
+        <meta name="keywords" content={keywords} />
+        <meta name="author" content={author} />
+        <meta property="og:image" content={cover} />
+        <meta name="twitter:image" content={cover} />
+        <meta itemProp="image" content={cover} />
+        <meta property="og:type" content={type} />
+        {meta.date && (
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
@@ -87,25 +50,23 @@ export default {
       "@type": "Article",
       "headline": "${title}",
       "image": [
-        "${meta.cover ? meta.cover : coverImage(title ? title : SITE)}"
+        "${cover}"
        ],
       "datePublished": "${meta.date}",
       "dateModified": "${meta.date}",
       "author": {
           "@type": "Person",
-          "name": "${meta.author || SITE}",
+          "name": "${author}",
           "url": "${TWITTER}"
         }
     }
         `
             }}
           ></script>
-        </>
-      ) : (
-        <meta property="og:type" content="website" />
-      )}
-    </>
-  ),
+        )}
+      </>
+    )
+  },
   footer: (
     <small style={{ display: 'block', marginTop: '8rem' }}>
       <abbr
