@@ -1,4 +1,4 @@
-const Link = ({ href, children }) => {
+const Link = ({ href, children, style }) => {
   return (
     <a
       href={href}
@@ -9,6 +9,7 @@ const Link = ({ href, children }) => {
         padding: '0 5px 1px 5px',
         borderRadius: '2px',
         textDecoration: 'none',
+        ...style
       }}
     >
       {children}
