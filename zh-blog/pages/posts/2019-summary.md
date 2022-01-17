@@ -276,3 +276,5 @@ vlog 是新一轮的风潮，但对于一个镜头恐惧症加强迫症重度患
 > **All those moments will be lost in time, like tears in rain.**<br />
 > —— Rutger Hauer
 
+
+[2018 年终总结](https://geekplux.com/2018-summary)

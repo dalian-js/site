@@ -166,3 +166,5 @@ Ray Dalio 的[《Principles》](https://book.douban.com/subject/20036150/)我是
 > 可会流到最初的源头
 >
 > ——钟立风《牧歌》
+
+[2019 年终总结](https://geekplux.com/2019-summary)
