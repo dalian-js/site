@@ -15,7 +15,7 @@ const DESCRIPTION =
 const FAV = 'https://geekplux.me/favicon.ico'
 // const api = 'https://i.microlink.io/'
 // const cardUrl = (title) =>
-//   `https://cards.microlink.io/?preset=chrisbiscardi&subtitle=${DOMAIN}&name=${SITE}&title=${title}`
+//   `https://cards.microlink.io/?preset=chris-biscardi&subtitle=${DOMAIN}&name=${SITE}&title=${title}`
 // const coverImage = (title) => `${api}${encodeURIComponent(cardUrl(title))}`
 
 const feed = new Feed({
