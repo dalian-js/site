@@ -48,7 +48,7 @@ async function generate() {
       path.join(__dirname, '..', 'pages', type, name)
     )
     const frontmatter = matter(content)
-    const link = `/${type}/` + name.replace(/\.mdx?/, '')
+    const link = `${URL}/${type}/` + name.replace(/\.mdx?/, '')
     let tags = frontmatter.data.tag || frontmatter.data.tags || []
     tags = (Array.isArray(tags) ? tags : tags.split(',')).map((tag) =>
       tag.trim()
